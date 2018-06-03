@@ -1,5 +1,4 @@
-import give_question
-
+import end_word_game
 en_list = []
 kr_list = []
 
@@ -18,6 +17,8 @@ def en_kr_question():
     while 1:
         en_question()
         if en_list.__len__() > 0 and en_list[en_list.__len__()-1] == 'q':
+            en_list.remove('q')
+            end_word_game.set_total(en_list.__len__())
             break
         else:
             kr_question()
